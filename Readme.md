@@ -11,9 +11,10 @@ Repositorio basico - Docker Mysql y PhpMyadmin
 2. [Requerimientos previos](#requerimientos)  
 3. [Instalación](#instalacion)  
 4. [Uso](#uso)  
-5. [Contribuciones](#contribuciones)  
-6. [Licencia](#licencia) 
-7. [Contacto](#contacto) 
+5. [Capturas de pantalla](#capturas-pantalla)  
+6. [Contribuciones](#contribuciones)  
+7. [Licencia](#licencia) 
+8. [Contacto](#contacto) 
 
 ## 📝 Descripción <a id="descripcion"></a>
 - Este repositorio permite levantar un docker con una base de datos MySql y un administrados phpMyAdmin.
@@ -44,6 +45,15 @@ docker compose up -d
 
 - Ingresar en el navegador a la direccion `http://localhost:8081` para abrir phpMyAdmin
 - Puede comenzar a trabajar con su servicio de MySQL conectandolo a sus aplicaciones a traves del puerto 3310
+
+## 📸 Capturas de Pantalla <a id="capturas-pantalla"></a>
+- Login
+
+![login](./assets/login.png)
+
+- Pantalla principal
+
+![principal](./assets/principal.png)
 
 ## 🤝 Contribuciones <a id="contribuciones"></a> 
 ¡Toda contribución es bienvenida! Por favor sigue los pasos:  
