@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:9.0.0
+    container_name: db-mysql
+    volumes: 
+      - .mysql_data:/var/lib/mysql:rw
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    restart: always
+    ports:
+      - 3310:3306
+  
+  phpmayadmin:
+    depends_on:
+      - mysql
+    container_name: db-phpmyadmin
+    image: phpmyadmin:5.2.1
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - 8081:80
+
+
