@@ -20,6 +20,7 @@ services:
     image: phpmyadmin:5.2.1
     restart: always
     environment:
+      # - PMA_ARBITRARY=1
       PMA_HOST: mysql
       PMA_PORT: 3306
     ports:
