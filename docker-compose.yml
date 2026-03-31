@@ -1,9 +1,8 @@
-version: "3.8"
 services:
   mysql:
-    image: mysql:9.0.0
+    image: mysql:8.4
     container_name: db-mysql
-    volumes: 
+    volumes:
       - .mysql_data:/var/lib/mysql:rw
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -12,7 +11,9 @@ services:
     restart: always
     ports:
       - 3310:3306
-  
+    networks:
+      - shared-db
+
   phpmayadmin:
     depends_on:
       - mysql
@@ -20,10 +21,14 @@ services:
     image: phpmyadmin:5.2.1
     restart: always
     environment:
-      # - PMA_ARBITRARY=1
+      PMA_ARBITRARY: 0
       PMA_HOST: mysql
       PMA_PORT: 3306
     ports:
       - 8081:80
+    networks:
+      - shared-db
 
-
+networks:
+  shared-db:
+    external: true
